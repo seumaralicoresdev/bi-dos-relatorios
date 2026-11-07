@@ -1,0 +1,13 @@
+# Dados reais e saídas locais não pertencem ao repositório público.
+/entrada/
+/saidas/
+/dados/
+/privado/
+**/.cache/
+**/__pycache__/
+*.pyc
+*.xlsx
+*.parquet
+*.sqlite
+*.sqlite3
+.venv/

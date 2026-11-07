@@ -2,6 +2,8 @@
 
 Arquivos do sistema Relatórios Corporativos e do projeto de integração com Power BI.
 
+O módulo complementar de preparação dos Excel mensais está descrito em [LEIA_PRIMEIRO_BASE_COMUM.md](LEIA_PRIMEIRO_BASE_COMUM.md). Ele produz base privada em Parquet, cobertura e agregações para os dois domínios, sem repetir consultas Snowflake na navegação dos painéis.
+
 ## Downloads
 
 - [Baixar o aplicativo Relatórios Corporativos — código-fonte ZIP](https://github.com/seumaralicoresdev/bi-dos-relatorios/raw/refs/heads/main/downloads/Relatorios_Corporativos.zip)
