@@ -1,0 +1,34 @@
+{
+  "name": "Verde Energia",
+  "dataColors": [
+    "#087F73",
+    "#18A999",
+    "#4C78A8",
+    "#F2A541",
+    "#6C63A8",
+    "#D65F5F",
+    "#637381",
+    "#8BC8B5"
+  ],
+  "background": "#FFFFFF",
+  "foreground": "#19332E",
+  "tableAccent": "#087F73",
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#F1F7F4" } },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": { "solid": { "color": "#E2EFE9" } },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

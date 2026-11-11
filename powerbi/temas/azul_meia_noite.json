@@ -1,0 +1,34 @@
+{
+  "name": "Azul Meia-noite",
+  "dataColors": [
+    "#42C6E8",
+    "#75A7FF",
+    "#6ED3A2",
+    "#FFC66D",
+    "#C49BFF",
+    "#FF7F8A",
+    "#E4EAF2",
+    "#8295AD"
+  ],
+  "background": "#17283D",
+  "foreground": "#F1F5FA",
+  "tableAccent": "#42C6E8",
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#102238" } },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": { "solid": { "color": "#091624" } },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img">
+<defs>
+<linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07172A" /><stop offset="1" stop-color="#0D2944" /></linearGradient>
+</defs>
+<rect width="1600" height="1000" fill="url(#fundo)" />
+<path d="M1250 0 C1450 130 1350 270 1600 360 M1320 0 C1510 150 1430 270 1600 315 M1260 1000 C1420 850 1460 790 1600 720" fill="none" stroke="#22B8C8" stroke-width="2" opacity="0.16" />
+<path d="M1435 0 C1550 110 1470 210 1600 250 M1380 1000 C1500 870 1515 800 1600 760" fill="none" stroke="#86A9FF" stroke-width="1.4" opacity="0.12" />
+<rect x="40" y="96" width="90" height="4" rx="2" fill="#49C6E7" />
+<rect x="40" y="116" width="365" height="58" rx="14" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<path d="M379 143 l6 6 l6 -6" fill="none" stroke="#A7B9C9" stroke-width="1.5" />
+<rect x="425" y="116" width="350" height="58" rx="14" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<path d="M749 143 l6 6 l6 -6" fill="none" stroke="#A7B9C9" stroke-width="1.5" />
+<rect x="795" y="116" width="350" height="58" rx="14" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<path d="M1119 143 l6 6 l6 -6" fill="none" stroke="#A7B9C9" stroke-width="1.5" />
+<rect x="1165" y="116" width="395" height="58" rx="14" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<path d="M1534 143 l6 6 l6 -6" fill="none" stroke="#A7B9C9" stroke-width="1.5" />
+<rect x="40" y="196" width="365" height="116" rx="15" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<rect x="40" y="196" width="5" height="116" rx="2.5" fill="#49C6E7" />
+<rect x="425" y="196" width="365" height="116" rx="15" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<rect x="425" y="196" width="5" height="116" rx="2.5" fill="#86A9FF" />
+<rect x="810" y="196" width="365" height="116" rx="15" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<rect x="810" y="196" width="5" height="116" rx="2.5" fill="#49C6E7" />
+<rect x="1195" y="196" width="365" height="116" rx="15" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<rect x="1195" y="196" width="5" height="116" rx="2.5" fill="#86A9FF" />
+<rect x="40" y="332" width="970" height="298" rx="15" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<line x1="82" y1="438" x2="976" y2="438" stroke="#294157" stroke-width="1" stroke-dasharray="3 5" />
+<line x1="82" y1="482" x2="976" y2="482" stroke="#294157" stroke-width="1" stroke-dasharray="3 5" />
+<line x1="82" y1="526" x2="976" y2="526" stroke="#294157" stroke-width="1" stroke-dasharray="3 5" />
+<line x1="82" y1="570" x2="976" y2="570" stroke="#294157" stroke-width="1" stroke-dasharray="3 5" />
+<rect x="1030" y="332" width="530" height="298" rx="15" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<rect x="1080" y="470" width="28" height="84" rx="5" fill="none" stroke="#49C6E7" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1111" y="492" width="18" height="62" rx="4" fill="none" stroke="#86A9FF" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1148" y="470" width="28" height="84" rx="5" fill="none" stroke="#49C6E7" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1179" y="492" width="18" height="62" rx="4" fill="none" stroke="#86A9FF" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1216" y="470" width="28" height="84" rx="5" fill="none" stroke="#49C6E7" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1247" y="492" width="18" height="62" rx="4" fill="none" stroke="#86A9FF" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1284" y="470" width="28" height="84" rx="5" fill="none" stroke="#49C6E7" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1315" y="492" width="18" height="62" rx="4" fill="none" stroke="#86A9FF" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1352" y="470" width="28" height="84" rx="5" fill="none" stroke="#49C6E7" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1383" y="492" width="18" height="62" rx="4" fill="none" stroke="#86A9FF" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1420" y="470" width="28" height="84" rx="5" fill="none" stroke="#49C6E7" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="1451" y="492" width="18" height="62" rx="4" fill="none" stroke="#86A9FF" stroke-width="1.4" stroke-dasharray="4 4" opacity="0.65" />
+<rect x="40" y="650" width="1520" height="238" rx="15" fill="#10243A" stroke="#29445C" stroke-width="1.2" />
+<line x1="62" y1="728" x2="1538" y2="728" stroke="#29445C" />
+<line x1="62" y1="775" x2="1538" y2="775" stroke="#294157" />
+<line x1="62" y1="811" x2="1538" y2="811" stroke="#294157" />
+<line x1="62" y1="847" x2="1538" y2="847" stroke="#294157" />
+</svg>

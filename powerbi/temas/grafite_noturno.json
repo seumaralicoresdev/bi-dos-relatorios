@@ -1,0 +1,34 @@
+{
+  "name": "Grafite Noturno",
+  "dataColors": [
+    "#35D0C1",
+    "#65A9FF",
+    "#B69BFF",
+    "#FFBF69",
+    "#80D889",
+    "#FF7385",
+    "#D8E0EA",
+    "#8CA1B8"
+  ],
+  "background": "#202630",
+  "foreground": "#EDF3F8",
+  "tableAccent": "#35D0C1",
+  "visualStyles": {
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#151B23" } },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": { "solid": { "color": "#0B1017" } },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  }
+}
