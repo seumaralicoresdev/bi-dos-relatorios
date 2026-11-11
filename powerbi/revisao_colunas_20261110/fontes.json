@@ -1,0 +1,25 @@
+{
+  "data_revisao": "2026-11-10",
+  "fontes": [
+    {
+      "arquivo": "todos scripts da automacao.md",
+      "papel": "Automação fornecida agora",
+      "bytes": 128548,
+      "sha256": "e05b246a37f062a1a669451d04092d3bc18f4874803d4b14e2811b1d16b739f8"
+    },
+    {
+      "arquivo": "Texto colado.txt",
+      "papel": "Fonte complementar fornecida agora",
+      "bytes": 14832,
+      "sha256": "97986ed3bf429da65089637bfb89f9793a7f4924ea411be159ae2b4fc5d3e8b1"
+    },
+    {
+      "arquivo": "relatorios e suas colunas.xlsx",
+      "papel": "Contrato de colunas fornecido pelo usuário",
+      "bytes": 11848,
+      "sha256": "bc54196abfe161aaa988af416fdaa1e538d27bd4801e4deb17050518d174a726"
+    }
+  ],
+  "limite": "Comparação estática: print + código fornecido, sem acesso ao PBIX e sem execução de SQL no Snowflake. Fontes Python analisadas por AST, nunca executadas.",
+  "automacao": "16 SQL_TEMPLATE extraídos; 15 coincidem com o SQL original do pacote anterior após normalização de espaços e caixa; TUSD Geradores é a fonte adicional. Resumo Faturamento não aparece no novo bundle."
+}

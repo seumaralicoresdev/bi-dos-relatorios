@@ -1,0 +1,110 @@
+{
+  "reports": 10,
+  "required_positions": 141,
+  "snowflake_executed": false,
+  "checks": [
+    {
+      "report": "clientes cativos",
+      "projected_aliases": 22,
+      "placeholders": [
+        "EMP",
+        "MES",
+        "PRD_SCHEMA",
+        "RAW_SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    },
+    {
+      "report": "saldo bloqueado",
+      "projected_aliases": 6,
+      "placeholders": [
+        "MES_COMPET",
+        "PRD_SCHEMA",
+        "RAW_SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    },
+    {
+      "report": "relatorio tusd geradores",
+      "projected_aliases": 24,
+      "placeholders": [
+        "EMP",
+        "MES",
+        "PRD_SCHEMA",
+        "RAW_SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    },
+    {
+      "report": "clietes livres",
+      "projected_aliases": 23,
+      "placeholders": [
+        "EMP",
+        "MES",
+        "PRD_SCHEMA",
+        "RAW_SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    },
+    {
+      "report": "desconto tarifario",
+      "projected_aliases": 15,
+      "placeholders": [
+        "EMP",
+        "MES",
+        "SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    },
+    {
+      "report": "mmgd",
+      "projected_aliases": 3,
+      "placeholders": [
+        "EMP",
+        "MES",
+        "SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    },
+    {
+      "report": "modicidade tarifaria",
+      "projected_aliases": 14,
+      "placeholders": [
+        "EMP",
+        "MES",
+        "SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    },
+    {
+      "report": "reativos excedentes",
+      "projected_aliases": 14,
+      "placeholders": [
+        "EMP",
+        "MES",
+        "SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    },
+    {
+      "report": "ultapassagem demanda",
+      "projected_aliases": 13,
+      "placeholders": [
+        "EMP",
+        "MES",
+        "SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    },
+    {
+      "report": "resumo fatramento",
+      "projected_aliases": 9,
+      "placeholders": [
+        "EMP",
+        "MES",
+        "SCHEMA"
+      ],
+      "status": "static_checks_passed"
+    }
+  ]
+}

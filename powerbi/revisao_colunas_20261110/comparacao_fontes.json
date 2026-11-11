@@ -1,0 +1,95 @@
+{
+  "metodo": "Parser SQLGlot 28.10.1, dialeto Snowflake, literais de teste para placeholders, comparação SQL normalizado preservando literais. Sem execução no banco.",
+  "resultados": [
+    {
+      "relatorio": "clientes_cativos",
+      "linha_MD": 103,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/clientes_cativos.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "encargo_covid",
+      "linha_MD": 467,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/encargo_covid.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "encargo_escassez_hidrica",
+      "linha_MD": 815,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/encargo_escassez_hidrica.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "icms_injetada",
+      "linha_MD": 1155,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/icms_injetada.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "isencao_icms_tusd",
+      "linha_MD": 1607,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/isencao_icms_tusd.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "saldo_bloqueado",
+      "linha_MD": 2049,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/saldo_bloqueado.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "clientes_livres",
+      "linha_MD": 3569,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/clientes_livres.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "consumo_proprio",
+      "linha_MD": 3985,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/consumo_proprio.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "desconto_tarifario",
+      "linha_MD": 4451,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/desconto_tarifario.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "financiamento_padrao",
+      "linha_MD": 4791,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/financiamento_padrao.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "mmgd",
+      "linha_MD": 5191,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/mmgd.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "modicidade_tarifaria",
+      "linha_MD": 5447,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/modicidade_tarifaria.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "reativos_excedentes",
+      "linha_MD": 5729,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/reativos_excedentes.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "retencao_tributos",
+      "linha_MD": 6139,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/retencao_tributos.sql",
+      "AST_SQL_equivalente": true
+    },
+    {
+      "relatorio": "ultrapassagem_demanda",
+      "linha_MD": 6433,
+      "sql_original": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/ultrapassagem_demanda.sql",
+      "AST_SQL_equivalente": true
+    }
+  ]
+}

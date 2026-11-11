@@ -1,0 +1,1282 @@
+[
+  {
+    "report": "clientes cativos",
+    "report_id": "clientes_cativos",
+    "label": "clientes cativos",
+    "sheet": "CONTABILIDADE",
+    "header_row": 2,
+    "table": "FatoFaturamento",
+    "proposed_table": "FatoClientesCativos",
+    "script": "01_clientes_cativos_completo.sql",
+    "current_script": "modelo/01_fato_faturamento.sql",
+    "status": "ampliar_em_fato_separada",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": "EmpresaChave",
+        "proposed": "EmpresaChave",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MES_REFERENCIA",
+        "actual": "DataReferencia",
+        "proposed": "DataReferencia",
+        "status": "presente_equivalente",
+        "note": "Mês YYYYMM convertido para data do primeiro dia; equivalência temporal, não de formato."
+      },
+      {
+        "expected": "MES_COMPETENCIA",
+        "actual": "DataCompetencia",
+        "proposed": "DataCompetencia",
+        "status": "presente_equivalente",
+        "note": "Mês YYYYMM convertido para data do primeiro dia; equivalência temporal, não de formato."
+      },
+      {
+        "expected": "CODIGO_CLASSE",
+        "actual": null,
+        "proposed": "CodigoClasse",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "CLASSE_PRINCIPAL",
+        "actual": "ClasseOrigem",
+        "proposed": "ClasseOrigem",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "SUBCLASSE",
+        "actual": null,
+        "proposed": "Subclasse",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "SUBCLASSE_DESCRICAO",
+        "actual": null,
+        "proposed": "SubclasseDescricao",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "CNR",
+        "actual": "CNR",
+        "proposed": "CNR",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "GRUPO",
+        "actual": "Grupo",
+        "proposed": "Grupo",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "SUB_GRUPO_TENSAO",
+        "actual": "SubGrupoTensao",
+        "proposed": "SubGrupoTensao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "COD_CATEGORIA_TARIFA",
+        "actual": "CategoriaTarifa",
+        "proposed": "CategoriaTarifa",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "CLIENTE_LIVRE",
+        "actual": null,
+        "proposed": "ClienteLivreOrigem",
+        "status": "classificacao_derivada_sem_campo_original",
+        "note": "Mercado existe como Cativo/Livre, mas não é a coluna original CLIENTE_LIVRE."
+      },
+      {
+        "expected": "ITEM_DOCUMENTO",
+        "actual": "ItemDocumento",
+        "proposed": "ItemDocumento",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "DESCRICAO_ITEM_DOCUMENTO",
+        "actual": "DescricaoItemDocumento",
+        "proposed": "DescricaoItemDocumento",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "ETAPA",
+        "actual": "Etapa",
+        "proposed": "Etapa",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "VALOR_FATURADO",
+        "actual": "ValorFaturado",
+        "proposed": "ValorFaturado",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "CONSUMO_FATURADO",
+        "actual": "ConsumoOrigem",
+        "proposed": "ConsumoOrigem",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MONTANTE_COFINS",
+        "actual": "COFINS",
+        "proposed": "COFINS",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MONTANTE_ICMS",
+        "actual": "ICMS",
+        "proposed": "ICMS",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MONTANTE_PIS",
+        "actual": "PIS",
+        "proposed": "PIS",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "VALOR_SEM_IMPOSTO",
+        "actual": "ValorSemImposto",
+        "proposed": "ValorSemImposto",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      }
+    ],
+    "extra_columns": [
+      "Mercado"
+    ],
+    "caveats": [
+      "FatoFaturamento soma Cativos e Livres em grão mais agregado: manter a tabela e criar a consulta completa separada; não fazer junção entre fatos.",
+      "As 21 colunas solicitadas já existem no SQL original de Cativos. Não existem identificadores individuais de fatura nessa projeção original.",
+      "Mercado=Cativo é classificação derivada; não substitui materialmente a coluna CLIENTE_LIVRE original, nula nos registros selecionados.",
+      "O relacionamento com DESCRICAO_CLASSE_SUBCLASSE usa EQTL_RS como fallback mesmo para as demais empresas; regra original preservada. Validar abrangência e cardinalidade desse cadastro."
+    ],
+    "rs_variants": "Variante RS antiga exclui documento 500000002466. O bundle atual não aplica essa exceção; candidato segue bundle atual. Confirmar qual regra está vigente antes de conciliar RS.",
+    "source": "Anexo todos scripts da automacao.md: SQL_TEMPLATE iniciado na linha 0103",
+    "source_sha256": "8ab83ec78563890420ea9aaf4338fb119623a27100dbfb4771dc18b9e897832b",
+    "load_mode": "mensal_competencia",
+    "modo_carga": "mensal_competencia",
+    "explicit_source_changes": [],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  },
+  {
+    "report": "saldo bloqueado",
+    "report_id": "saldo_bloqueado",
+    "label": "saldo bloqueado",
+    "sheet": "CONTABILIDADE",
+    "header_row": 4,
+    "table": "FatoSaldoBloqueado",
+    "proposed_table": "FatoSaldoBloqueado",
+    "script": "09_saldo_bloqueado_equivalente_ao_excel.sql",
+    "current_script": "modelo/08_saldo_bloqueado_numerico.sql",
+    "status": "colunas_cobertas_semantica_quantidade_a_validar",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": "EmpresaChave",
+        "proposed": "EmpresaChave",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "REFERENCIA",
+        "actual": "DataCompetencia",
+        "proposed": "DataCompetencia",
+        "status": "presente_equivalente",
+        "note": "Mês YYYYMM convertido para data do primeiro dia; equivalência temporal, não de formato."
+      },
+      {
+        "expected": "CONTRATO_GERACAO",
+        "actual": "ContratoGeracao",
+        "proposed": "ContratoGeracao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "QUANTIDADE",
+        "actual": "QuantidadeOrigem",
+        "proposed": "QuantidadeOrigem",
+        "status": "diferenca_semantica",
+        "note": "Modelo: SUM(QUANT) numérico; legado Excel: TRUNC(SUM(QUANT)), filtro de zero após truncamento."
+      },
+      {
+        "expected": "MES_ORIGEM_CREDITO",
+        "actual": "DataMesOrigemCredito",
+        "proposed": "DataMesOrigemCredito",
+        "status": "presente_equivalente",
+        "note": "Mês YYYYMM convertido para data do primeiro dia; equivalência temporal, não de formato."
+      },
+      {
+        "expected": "CONTA_CONTRATO",
+        "actual": "ContaContrato",
+        "proposed": "ContaContrato",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      }
+    ],
+    "extra_columns": [],
+    "caveats": [
+      "As seis colunas estão cobertas por aliases e conversões de mês em data.",
+      "QUANTIDADE do Excel é TRUNC(SUM(QUANT)) convertido em texto; QuantidadeOrigem do modelo atual mantém frações. O candidato opcional reproduz o TRUNC do Excel e devolve número para somar. Aplicar somente se essa for a regra desejada.",
+      "O filtro original exclui quantidade truncada igual a zero; o modelo numérico pode conservar frações. Conferir tanto contagem de linhas como soma.",
+      "É saldo em uma data de corte, com crédito de origem anterior a 60 meses e limite CREATEDDATE no dia 06 do mês seguinte. Não somar snapshots de meses diferentes como fluxo."
+    ],
+    "rs_variants": "Variante RS antiga igual ao SQL genérico. RAW usa CCS_RS; PRD usa EQTL_RS.",
+    "source": "Anexo todos scripts da automacao.md: SQL_TEMPLATE iniciado na linha 2049",
+    "source_sha256": "48b5a98b2670eecb3251a37755633b091bee4590f91c7923792fdb76dd1351ea",
+    "load_mode": "snapshot_mensal",
+    "modo_carga": "snapshot_mensal",
+    "explicit_source_changes": [],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  },
+  {
+    "report": "relatorio tusd geradores",
+    "report_id": "tusd_geradores",
+    "label": "relatorio tusd geradores",
+    "sheet": "CONTABILIDADE",
+    "header_row": 6,
+    "table": null,
+    "proposed_table": "FatoTUSDGeradores",
+    "script": "10_tusd_geradores_completo.sql",
+    "current_script": null,
+    "status": "nao_identificado_no_print_fonte_agora_disponivel",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": null,
+        "proposed": "EmpresaChave",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "INSTALACAO",
+        "actual": null,
+        "proposed": "Instalacao",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "actual": null,
+        "proposed": "DocumentoImpressao",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "NUMERO_FATURA",
+        "actual": null,
+        "proposed": "NumeroFatura",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "CONTA_CONTRATO",
+        "actual": null,
+        "proposed": "ContaContrato",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "DATA_CRIACAO_IMPRESSAO",
+        "actual": null,
+        "proposed": "DataCriacaoImpressao",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "CONTA_MES",
+        "actual": null,
+        "proposed": "DataContaMes",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "MES_REFERENCIA",
+        "actual": null,
+        "proposed": "DataReferencia",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "MES_COMPETENCIA",
+        "actual": null,
+        "proposed": "DataCompetencia",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "CLASSE",
+        "actual": null,
+        "proposed": "ClasseOrigem",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "CNR",
+        "actual": null,
+        "proposed": "CNR",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "GRUPO",
+        "actual": null,
+        "proposed": "Grupo",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "SUB_GRUPO_TENSAO",
+        "actual": null,
+        "proposed": "SubGrupoTensao",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "COD_CATEGORIA_TARIFA",
+        "actual": null,
+        "proposed": "CategoriaTarifa",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "CLIENTE_LIVRE",
+        "actual": null,
+        "proposed": "ClienteLivreOrigem",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "ITEM_DOCUMENTO",
+        "actual": null,
+        "proposed": "ItemDocumento",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "DESCRICAO_ITEM_DOCUMENTO",
+        "actual": null,
+        "proposed": "DescricaoItemDocumento",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "ETAPA",
+        "actual": null,
+        "proposed": "Etapa",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "VALOR_FATURADO",
+        "actual": null,
+        "proposed": "ValorFaturado",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "CONSUMO_FATURADO",
+        "actual": null,
+        "proposed": "ConsumoOrigem",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "MONTANTE_COFINS",
+        "actual": null,
+        "proposed": "COFINS",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "MONTANTE_ICMS",
+        "actual": null,
+        "proposed": "ICMS",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "MONTANTE_PIS",
+        "actual": null,
+        "proposed": "PIS",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "VALOR_SEM_IMPOSTO",
+        "actual": null,
+        "proposed": "ValorSemImposto",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      }
+    ],
+    "extra_columns": [],
+    "caveats": [
+      "As 24 colunas exigidas estão presentes no SQL enviado agora; fato correspondente não identificada no print.",
+      "O build_sql da automação calcula MES_REFERENCIA como o mês anterior ao parâmetro de execução. O candidato preserva isso: {MES}=202610 filtra referência 202609.",
+      "A seleção usa B.MES_REFERENCIA para empresas diferentes de D005 e ADD_MONTHS(FIM_CALCULO,1) para D005. Não existe filtro de MES_COMPETENCIA; DataCompetencia pode ficar fora da janela desejada.",
+      "Antes de definir a janela de 3 meses, confirmar se o painel seguirá a referência do relatório ou a competência contábil. Não trocar o filtro de uma pela outra sem validação.",
+      "DataContaMes representa CONTA_MES, calculada a partir de FIM_CALCULO; não é sinônimo automático de DataCompetencia.",
+      "DATA_CRIACAO_IMPRESSAO é preservada no tipo retornado pelo banco; confirmar o tipo no Power Query."
+    ],
+    "rs_variants": "O bundle informa PRD EQTL_RS e RAW CCS_RS. Não foi encontrada versão alternativa específica RS para TUSD nesta fonte; não inferir mapeamento diferente.",
+    "source": "Anexo todos scripts da automacao.md: SQL_TEMPLATE iniciado na linha 2593",
+    "source_sha256": "85550da056d4195aeb137ad6efcee8a1824f69e46a5eb9c10d15f4d347a680af",
+    "load_mode": "mensal_referencia_mes_anterior",
+    "modo_carga": "mensal_referencia_mes_anterior",
+    "explicit_source_changes": [
+      "Adaptação de placeholders ao fnConsultaSQL; regra previous_competencia preservada em expressão SQL -1 mês."
+    ],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  },
+  {
+    "report": "clietes livres",
+    "report_id": "clientes_livres",
+    "label": "clietes livres",
+    "sheet": "CONTABILIDADE",
+    "header_row": 8,
+    "table": "FatoFaturamento",
+    "proposed_table": "FatoClientesLivres",
+    "script": "02_clientes_livres_completo.sql",
+    "current_script": "modelo/01_fato_faturamento.sql",
+    "status": "ampliar_em_fato_separada",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": "EmpresaChave",
+        "proposed": "EmpresaChave",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "INSTALACAO",
+        "actual": null,
+        "proposed": "Instalacao",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "actual": null,
+        "proposed": "DocumentoImpressao",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "NUMERO_FATURA",
+        "actual": null,
+        "proposed": "NumeroFatura",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "CONTA_CONTRATO",
+        "actual": null,
+        "proposed": "ContaContrato",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "MES_REFERENCIA",
+        "actual": "DataReferencia",
+        "proposed": "DataReferencia",
+        "status": "presente_equivalente",
+        "note": "Mês YYYYMM convertido para data do primeiro dia; equivalência temporal, não de formato."
+      },
+      {
+        "expected": "MES_COMPETENCIA",
+        "actual": "DataCompetencia",
+        "proposed": "DataCompetencia",
+        "status": "presente_equivalente",
+        "note": "Mês YYYYMM convertido para data do primeiro dia; equivalência temporal, não de formato."
+      },
+      {
+        "expected": "CLASSE",
+        "actual": "ClasseOrigem",
+        "proposed": "ClasseOrigem",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "CNR",
+        "actual": "CNR",
+        "proposed": "CNR",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "GRUPO",
+        "actual": "Grupo",
+        "proposed": "Grupo",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "SUB_GRUPO_TENSAO",
+        "actual": "SubGrupoTensao",
+        "proposed": "SubGrupoTensao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "COD_CATEGORIA_TARIFA",
+        "actual": "CategoriaTarifa",
+        "proposed": "CategoriaTarifa",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "CLIENTE_LIVRE",
+        "actual": null,
+        "proposed": "ClienteLivreOrigem",
+        "status": "classificacao_derivada_sem_campo_original",
+        "note": "Mercado existe como Cativo/Livre, mas não é a coluna original CLIENTE_LIVRE."
+      },
+      {
+        "expected": "ITEM_DOCUMENTO",
+        "actual": "ItemDocumento",
+        "proposed": "ItemDocumento",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "DESCRICAO_ITEM_DOCUMENTO",
+        "actual": "DescricaoItemDocumento",
+        "proposed": "DescricaoItemDocumento",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "ETAPA",
+        "actual": "Etapa",
+        "proposed": "Etapa",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "VALOR_FATURADO",
+        "actual": "ValorFaturado",
+        "proposed": "ValorFaturado",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "CONSUMO_FATURADO",
+        "actual": "ConsumoOrigem",
+        "proposed": "ConsumoOrigem",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MONTANTE_COFINS",
+        "actual": "COFINS",
+        "proposed": "COFINS",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MONTANTE_ICMS",
+        "actual": "ICMS",
+        "proposed": "ICMS",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MONTANTE_PIS",
+        "actual": "PIS",
+        "proposed": "PIS",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "VALOR_SEM_IMPOSTO",
+        "actual": "ValorSemImposto",
+        "proposed": "ValorSemImposto",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      }
+    ],
+    "extra_columns": [
+      "Mercado"
+    ],
+    "caveats": [
+      "FatoFaturamento agregada descarta Instalacao, DocumentoImpressao, NumeroFatura e ContaContrato. Esses dados não podem ser recuperados por uma nova medida DAX.",
+      "Criar fato completa separada mantendo FatoFaturamento atual. Não juntar a fato detalhada à agregada por documento ou por empresa/mês: isso multiplica medidas.",
+      "Mercado=Livre é classificação derivada; o candidato inclui também CLIENTE_LIVRE original.",
+      "Identificadores são devolvidos como texto para preservar zeros que já existam na origem; TO_VARCHAR não recupera zeros já perdidos no banco.",
+      "Preserva o grão legado, que agrega itens dentro de cada documento; não promete uma linha única por DocumentoImpressao."
+    ],
+    "rs_variants": "SQL da variante RS antiga idêntico ao genérico. RAW CCS_RS e PRD EQTL_RS.",
+    "source": "Anexo todos scripts da automacao.md: SQL_TEMPLATE iniciado na linha 3569",
+    "source_sha256": "7cd338ac25cae48fc034c877e8ab53e2a8d526c8e08d6da5551c0c6cc1933ffc",
+    "load_mode": "mensal_competencia",
+    "modo_carga": "mensal_competencia",
+    "explicit_source_changes": [],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  },
+  {
+    "report": "desconto tarifario",
+    "report_id": "desconto_tarifario",
+    "label": "desconto tarifario",
+    "sheet": "CONTABILIDADE",
+    "header_row": 10,
+    "table": "FatoDesconto",
+    "proposed_table": "FatoDesconto",
+    "script": "03_desconto_completo.sql",
+    "current_script": "modelo/02_fato_desconto.sql",
+    "status": "ampliar_projecao",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": "EmpresaChave",
+        "proposed": "EmpresaChave",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MES_COMPETENCIA",
+        "actual": "DataCompetencia",
+        "proposed": "DataCompetencia",
+        "status": "presente_equivalente",
+        "note": "Mês YYYYMM convertido para data do primeiro dia; equivalência temporal, não de formato."
+      },
+      {
+        "expected": "ITEM_ORDENACAO",
+        "actual": "ItemOrdenacao",
+        "proposed": "ItemOrdenacao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "ITEM_DOCUMENTO",
+        "actual": "ItemDocumento",
+        "proposed": "ItemDocumento",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "SUB_OPERACAO",
+        "actual": "SubOperacao",
+        "proposed": "SubOperacao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "CHAVE_RECONCILIACAO",
+        "actual": null,
+        "proposed": "ChaveReconciliacao",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "INSTALACAO",
+        "actual": "Instalacao",
+        "proposed": "Instalacao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "CONTA_CONTRATO",
+        "actual": "ContaContrato",
+        "proposed": "ContaContrato",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "CONTRATO",
+        "actual": null,
+        "proposed": "Contrato",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "FATURA",
+        "actual": null,
+        "proposed": "Fatura",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "CATEGORIA_TARIFA",
+        "actual": null,
+        "proposed": "CategoriaTarifa",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "SUBCLASSE",
+        "actual": null,
+        "proposed": "Subclasse",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "RECEITA",
+        "actual": "ValorDescontoAssinado",
+        "proposed": "ValorDescontoAssinado",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "actual": "DocumentoImpressao",
+        "proposed": "DocumentoImpressao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "GD",
+        "actual": "MarcadorGDOrigem",
+        "proposed": "MarcadorGDOrigem",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      }
+    ],
+    "extra_columns": [],
+    "caveats": [
+      "Adicionar ChaveReconciliacao, Contrato, Fatura, CategoriaTarifa e Subclasse; RECEITA já corresponde a ValorDescontoAssinado e GD a MarcadorGDOrigem.",
+      "Preserva GROUP BY, receita assinada e filtros do legado. Não aplicar ABS nos valores.",
+      "A função janela de SubOperacao não particiona por competência. Manter uma execução por mês; transformar o filtro em intervalo exigiria rever essa partição."
+    ],
+    "rs_variants": "Variante RS antiga inclui item ZBIL na lista; bundle atual genérico não inclui. Candidato preserva bundle atual e exige conciliação dessa diferença.",
+    "source": "Anexo todos scripts da automacao.md: SQL_TEMPLATE iniciado na linha 4451",
+    "source_sha256": "e339f9111dc55d49755389881a9b45f5450ced1fd59e62ae0d44bd173e03dec4",
+    "load_mode": "mensal_competencia",
+    "modo_carga": "mensal_competencia",
+    "explicit_source_changes": [],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  },
+  {
+    "report": "mmgd",
+    "report_id": "mmgd",
+    "label": "mmgd",
+    "sheet": "CONTABILIDADE",
+    "header_row": 12,
+    "table": "FatoMMGDCreditos",
+    "proposed_table": "FatoMMGDConsolidado",
+    "script": "07_mmgd_consolidado_3meses.sql",
+    "current_script": "modelo/07_mmgd_creditos_numericos.sql",
+    "status": "criar_consolidado_com_grao_correto",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": "EmpresaChave",
+        "proposed": "EmpresaChave",
+        "status": "presente_grao_diferente",
+        "note": "Alias existe no detalhe, mas relatório exige agrupamento apenas por empresa e MES; usar consolidado separado."
+      },
+      {
+        "expected": "MES",
+        "actual": "DataMesCredito",
+        "proposed": "DataMesCredito",
+        "status": "presente_grao_diferente",
+        "note": "Alias existe no detalhe, mas relatório exige agrupamento apenas por empresa e MES; usar consolidado separado."
+      },
+      {
+        "expected": "KWH",
+        "actual": "CreditoKWh",
+        "proposed": "CreditoKWh",
+        "status": "presente_grao_diferente",
+        "note": "Alias existe no detalhe, mas relatório exige agrupamento apenas por empresa e MES; usar consolidado separado."
+      }
+    ],
+    "extra_columns": [],
+    "caveats": [
+      "EMPRESA/MES/KWH aparecem como EmpresaChave/DataMesCredito/CreditoKWh, mas o modelo atual tem grão de contrato e competência de processamento. O relatório pedido é consolidado por empresa e mês do crédito.",
+      "O candidato produz uma linha por empresa e mês, sem substituir a tabela detalhada. Relacionar DataMesCredito à dimensão de mês apropriada.",
+      "Mudança explícita de período: o original retorna MES-60 até MES (61 meses inclusivos); o candidato retorna MES-2 até MES (3 meses), ancorado no parâmetro, não na data atual.",
+      "Executar uma vez por distribuidora com pCompetencia final. Não repetir esta consulta numa lista de três meses, pois as janelas se sobrepõem e duplicam valores.",
+      "O original consolidado não tem HAVING SUM(KWH)<>0, ao contrário do detalhe atual. O candidato preserva grupos com soma zero."
+    ],
+    "rs_variants": "Variante RS antiga usa EQTLINFO_RAW.{SCHEMA}.EENRGY_CR_BR, ALLOC_DATE e QUANT; bundle atual usa SB_FATURAMENTO.EQTL_RS.BASE_MMGD_CREDITOS. Confirmar fonte vigente e disponibilidade para RS; não generalizar o esquema RAW como EQTL_RS.",
+    "source": "Anexo todos scripts da automacao.md: SQL_TEMPLATE iniciado na linha 5191",
+    "source_sha256": "0b9fe1449bc2b5d3ca60205d49b0efb1cbe89ac029256c95a7fea87cc82c9e0c",
+    "load_mode": "intervalo_3_meses_uma_chamada",
+    "modo_carga": "intervalo_3_meses_uma_chamada",
+    "explicit_source_changes": [
+      "Janela alterada explicitamente de 61 para 3 meses inclusivos; uma chamada por distribuidora."
+    ],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  },
+  {
+    "report": "modicidade tarifaria",
+    "report_id": "modicidade_tarifaria",
+    "label": "modicidade tarifaria",
+    "sheet": "CONTABILIDADE",
+    "header_row": 14,
+    "table": "FatoModicidade",
+    "proposed_table": "FatoModicidade",
+    "script": "04_modicidade_completo.sql",
+    "current_script": "modelo/05_fato_modicidade.sql",
+    "status": "corrigir_origem_ou_codigo_da_consulta",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": "EmpresaChave",
+        "proposed": "EmpresaChave",
+        "status": "nome_presente_origem_nao_confirmada",
+        "note": "Nome visível, mas conjunto de colunas sugere consulta errada; não afirmar equivalência da origem."
+      },
+      {
+        "expected": "REFERENCIA",
+        "actual": "DataCompetencia",
+        "proposed": "DataCompetencia",
+        "status": "nome_presente_origem_nao_confirmada",
+        "note": "Nome visível, mas conjunto de colunas sugere consulta errada; não afirmar equivalência da origem."
+      },
+      {
+        "expected": "MES_LANCAMENTO",
+        "actual": null,
+        "proposed": "MesLancamento",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "CATEGORIA_DOC_SUBSTITUTO",
+        "actual": null,
+        "proposed": "CategoriaDocSubstituto",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "STATUS_DOC_SUBST",
+        "actual": null,
+        "proposed": "StatusDocSubst",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "OPERACAO",
+        "actual": null,
+        "proposed": "Operacao",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "SUB_OPERACAO",
+        "actual": null,
+        "proposed": "SubOperacao",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "DESCRICAO",
+        "actual": null,
+        "proposed": "Descricao",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "ITEM_ESTATISTICO",
+        "actual": null,
+        "proposed": "ItemEstatistico",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "CLASSE",
+        "actual": "ClasseOrigem",
+        "proposed": "ClasseOrigem",
+        "status": "nome_presente_origem_nao_confirmada",
+        "note": "Nome visível, mas conjunto de colunas sugere consulta errada; não afirmar equivalência da origem."
+      },
+      {
+        "expected": "CONTA_CONTRATO",
+        "actual": null,
+        "proposed": "ContaContrato",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "NUMERO_DOCUMENTO",
+        "actual": null,
+        "proposed": "NumeroDocumento",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "BLOQUEIO",
+        "actual": null,
+        "proposed": "Bloqueio",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "VALOR",
+        "actual": null,
+        "proposed": "ValorModicidadeAssinado",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      }
+    ],
+    "extra_columns": [],
+    "caveats": [
+      "O print de FatoModicidade exibe exatamente os campos de Reativos. Isso é incompatível com a projeção do SQL 05_fato_modicidade.sql; confirmar no Editor Avançado o caminho e código efetivamente usados.",
+      "O candidato traz as 14 colunas do legado BASE_MODIC_TAR_NOVO e preserva o alias ValorModicidadeAssinado. ValorFaturado do print não é equivalência comprovada de VALOR.",
+      "O modelo 05 correto já continha nove colunas; além de corrigir a consulta apontada, acrescentar CategoriaDocSubstituto, StatusDocSubst, Descricao, ItemEstatistico e ClasseOrigem.",
+      "ClasseOrigem, EmpresaChave e DataCompetencia presentes no print não confirmam origem correta enquanto a consulta estiver divergente.",
+      "Preserva MAX(CLASSE) e grão de operação/documento do legado; não substituir por DISTINCT nem relacionar diretamente a outras fatos por número de documento."
+    ],
+    "rs_variants": "Variante RS antiga idêntica ao SQL genérico.",
+    "source": "Anexo todos scripts da automacao.md: SQL_TEMPLATE iniciado na linha 5447",
+    "source_sha256": "6467376891ae818f597c82449e0b40c375d09b4560f05ba0498d0fc35f0ca4b3",
+    "load_mode": "mensal_referencia",
+    "modo_carga": "mensal_referencia",
+    "explicit_source_changes": [],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  },
+  {
+    "report": "reativos excedentes",
+    "report_id": "reativos_excedentes",
+    "label": "reativos excedentes",
+    "sheet": "CONTABILIDADE",
+    "header_row": 16,
+    "table": "FatoReativos",
+    "proposed_table": "FatoReativos",
+    "script": "05_reativos_completo.sql",
+    "current_script": "modelo/03_fato_reativos.sql",
+    "status": "ampliar_projecao",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": "EmpresaChave",
+        "proposed": "EmpresaChave",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "INSTALACAO",
+        "actual": "Instalacao",
+        "proposed": "Instalacao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "actual": "DocumentoImpressao",
+        "proposed": "DocumentoImpressao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MES_REFERENCIA",
+        "actual": null,
+        "proposed": "DataReferencia",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "MES_COMPETENCIA",
+        "actual": "DataCompetencia",
+        "proposed": "DataCompetencia",
+        "status": "presente_equivalente",
+        "note": "Mês YYYYMM convertido para data do primeiro dia; equivalência temporal, não de formato."
+      },
+      {
+        "expected": "CLASSE",
+        "actual": "ClasseOrigem",
+        "proposed": "ClasseOrigem",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "SUBCLASSE",
+        "actual": null,
+        "proposed": "Subclasse",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "GRUPO",
+        "actual": "Grupo",
+        "proposed": "Grupo",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "SUB_GRUPO_TENSAO",
+        "actual": "SubGrupoTensao",
+        "proposed": "SubGrupoTensao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "ITEM_ORDENACAO",
+        "actual": null,
+        "proposed": "ItemOrdenacao",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "ITEM_DOCUMENTO",
+        "actual": "ItemDocumento",
+        "proposed": "ItemDocumento",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "DESCRICAO_ITEM_DOCUMENTO",
+        "actual": null,
+        "proposed": "DescricaoItemDocumento",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "VALOR_FATURADO",
+        "actual": "ValorFaturado",
+        "proposed": "ValorFaturado",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "VALOR_SEM_IMPOSTO",
+        "actual": "ValorSemImposto",
+        "proposed": "ValorSemImposto",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      }
+    ],
+    "extra_columns": [],
+    "caveats": [
+      "Adicionar DataReferencia, Subclasse, ItemOrdenacao e DescricaoItemDocumento.",
+      "Preserva o INNER JOIN de cadastro, que pode excluir instalações sem cadastro. Validação deve comparar à saída do mesmo SQL legado.",
+      "Uma fatura pode conter vários itens e linhas; DocumentoImpressao não é chave única da fato."
+    ],
+    "rs_variants": "Variante RS antiga usa MAX em vez de SUM dos impostos no agrupamento intermediário e exclui documento 500000002466. Isso pode alterar ValorSemImposto. Bundle atual usa genérico também no RS; conciliar antes de aplicar regra antiga.",
+    "source": "Anexo todos scripts da automacao.md: SQL_TEMPLATE iniciado na linha 5729",
+    "source_sha256": "8cb34ede74ab663e4b7da84334a7847ff119d0b9224ec24ae8b9cb14ca1f4a12",
+    "load_mode": "mensal_competencia",
+    "modo_carga": "mensal_competencia",
+    "explicit_source_changes": [],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  },
+  {
+    "report": "ultapassagem demanda",
+    "report_id": "ultrapassagem_demanda",
+    "label": "ultapassagem demanda",
+    "sheet": "CONTABILIDADE",
+    "header_row": 18,
+    "table": "FatoUltrapassagem",
+    "proposed_table": "FatoUltrapassagem",
+    "script": "06_ultrapassagem_completo.sql",
+    "current_script": "modelo/04_fato_ultrapassagem.sql",
+    "status": "ampliar_projecao",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": "EmpresaChave",
+        "proposed": "EmpresaChave",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "INSTALACAO",
+        "actual": "Instalacao",
+        "proposed": "Instalacao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "actual": "DocumentoImpressao",
+        "proposed": "DocumentoImpressao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "MES_REFERENCIA",
+        "actual": null,
+        "proposed": "DataReferencia",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "MES_COMPETENCIA",
+        "actual": "DataCompetencia",
+        "proposed": "DataCompetencia",
+        "status": "presente_equivalente",
+        "note": "Mês YYYYMM convertido para data do primeiro dia; equivalência temporal, não de formato."
+      },
+      {
+        "expected": "CLASSE",
+        "actual": "ClasseOrigem",
+        "proposed": "ClasseOrigem",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "SUBCLASSE",
+        "actual": null,
+        "proposed": "Subclasse",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "GRUPO",
+        "actual": "Grupo",
+        "proposed": "Grupo",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "SUB_GRUPO_TENSAO",
+        "actual": "SubGrupoTensao",
+        "proposed": "SubGrupoTensao",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "ITEM_DOCUMENTO",
+        "actual": "ItemDocumento",
+        "proposed": "ItemDocumento",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "DESCRICAO_ITEM_DOCUMENTO",
+        "actual": null,
+        "proposed": "DescricaoItemDocumento",
+        "status": "ausente_no_print",
+        "note": "Adicionar projeção explícita na tabela proposta."
+      },
+      {
+        "expected": "VALOR_FATURADO",
+        "actual": "ValorFaturado",
+        "proposed": "ValorFaturado",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      },
+      {
+        "expected": "VALOR_SEM_IMPOSTO",
+        "actual": "ValorSemImposto",
+        "proposed": "ValorSemImposto",
+        "status": "presente_equivalente",
+        "note": "Alias do modelo; requisito não exige o mesmo nome físico."
+      }
+    ],
+    "extra_columns": [],
+    "caveats": [
+      "Adicionar DataReferencia, Subclasse e DescricaoItemDocumento.",
+      "ItemOrdenacao não está entre as 13 colunas exigidas para Ultrapassagem; não inventar falta com base em Reativos.",
+      "Preserva LEFT JOIN de cadastro e o agrupamento original; DocumentoImpressao não é chave única."
+    ],
+    "rs_variants": "Variante RS antiga tem diferenças de formatação/qualificação, sem diferença identificada de filtros ou agregações.",
+    "source": "Anexo todos scripts da automacao.md: SQL_TEMPLATE iniciado na linha 6433",
+    "source_sha256": "05e907fe2401ed57e0682339955e9ef2f8b5476c9ea6098de8150cf9c8a13f01",
+    "load_mode": "mensal_competencia",
+    "modo_carga": "mensal_competencia",
+    "explicit_source_changes": [],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  },
+  {
+    "report": "resumo fatramento",
+    "report_id": "resumo_faturamento",
+    "label": "resumo fatramento",
+    "sheet": "CONTABILIDADE",
+    "header_row": 20,
+    "table": null,
+    "proposed_table": "FatoResumoFaturamento",
+    "script": "08_resumo_faturamento_completo.sql",
+    "current_script": "originais/resumo_faturamento.sql",
+    "status": "nao_identificado_no_print_schema_a_validar",
+    "columns": [
+      {
+        "expected": "EMPRESA",
+        "actual": null,
+        "proposed": "EmpresaChave",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "MES_COMPETENCIA",
+        "actual": null,
+        "proposed": "DataCompetencia",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "CLIENTE_LIVRE",
+        "actual": null,
+        "proposed": "ClienteLivreOrigem",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "CLASSE",
+        "actual": null,
+        "proposed": "ClasseOrigem",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "ICMS",
+        "actual": null,
+        "proposed": "ICMS",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "PIS",
+        "actual": null,
+        "proposed": "PIS",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "COFINS",
+        "actual": null,
+        "proposed": "COFINS",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "SUBVENCAO_BXRENDA",
+        "actual": null,
+        "proposed": "SubvencaoBaixaRenda",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      },
+      {
+        "expected": "DATA_DADOS",
+        "actual": null,
+        "proposed": "DataDados",
+        "status": "tabela_nao_identificada_no_print",
+        "note": "Sem tabela correspondente visível; não equivale a prova de ausência no PBIX completo."
+      }
+    ],
+    "extra_columns": [],
+    "caveats": [
+      "Fato correspondente não identificada no print; isso não prova ausência em todo o PBIX.",
+      "Este relatório não está entre os 16 SQL_TEMPLATE do novo bundle. A fonte é o SQL original existente, que usa A.*; o candidato projeta explicitamente as nove colunas do Excel.",
+      "ICMS/PIS/COFINS/SUBVENCAO_BXRENDA também são referidas no formatador Python legado. CLIENTE_LIVRE e DATA_DADOS dependem da confirmação do schema atual de RESUMO_FAT_TRIBUTOS.",
+      "Não assumir equivalência aditiva com FatoFaturamento nem somar seus totais entre si: é relatório de conciliação.",
+      "O formatador Excel arredonda quatro valores para duas casas; o SQL candidato preserva precisão do banco. Arredondar apenas após definir a regra de conciliação."
+    ],
+    "rs_variants": "Variante RS antiga idêntica ao SQL genérico.",
+    "source": "downloads/Projeto_PowerBI.zip :: PowerBI_Contabilidade_Financeiro/sql/originais/resumo_faturamento.sql",
+    "source_sha256": "392604f37afec39d8928d178db3a3955c45ffa9e78a6b98502eac02602370c62",
+    "load_mode": "mensal_competencia",
+    "modo_carga": "mensal_competencia",
+    "explicit_source_changes": [
+      "SELECT A.* substituído pela projeção explícita do Excel; nomes a confirmar no schema da origem."
+    ],
+    "verification": "Comparacao estatica de SQL, Excel e print; nao executado no Snowflake nem testado no PBIX."
+  }
+]

@@ -1,0 +1,1593 @@
+[
+  {
+    "report": "Consumo proprio",
+    "table": "FatoConsumoProprio",
+    "script": [
+      "06_fato_consumo_proprio.sql"
+    ],
+    "source_script": "originais/consumo_proprio.sql",
+    "status": "candidato_pendente_homologacao",
+    "load_mode": "mensal",
+    "modo_carga": {
+      "tipo": "mensal",
+      "parametro": "MES_COMPET",
+      "filtro": "FATURAMENTO.MES_COMPETENCIA",
+      "chamadas_por_empresa_tres_meses": 3
+    },
+    "columns": [
+      {
+        "position": 1,
+        "expected": "EMPRESA",
+        "occurrence": 1,
+        "actual": "EmpresaChave",
+        "status": "equivalencia_condicional",
+        "proposed": "EmpresaChave",
+        "note": "EmpresaChave identifica a distribuidora solicitada; Excel usa FOTO_CADASTRO.EMPRESA. Validar correspondência; candidato também preserva EmpresaOrigem."
+      },
+      {
+        "position": 2,
+        "expected": "CNPJ_OU_CPF",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CnpjOuCpf",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 3,
+        "expected": "RAZAO_SOCIAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "RazaoSocial",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 4,
+        "expected": "INSTALACAO",
+        "occurrence": 1,
+        "actual": "Instalacao",
+        "status": "equivalente_renomeada",
+        "proposed": "Instalacao",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 5,
+        "expected": "CONTA_CONTRATO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "ContaContrato",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 6,
+        "expected": "NUMERO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "NumeroFatura",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 7,
+        "expected": "PARCEIRO_NEGOCIO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "ParceiroNegocio",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 8,
+        "expected": "TIPO_CALCULO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "TipoCalculo",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 9,
+        "expected": "TIPO_FATURAMENTO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "TipoFaturamento",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 10,
+        "expected": "COD_TP_FAT",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CodigoTipoFaturamento",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 11,
+        "expected": "FATURA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Fatura",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 12,
+        "expected": "CONTRATO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Contrato",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 13,
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "occurrence": 1,
+        "actual": "DocumentoImpressao",
+        "status": "equivalente_renomeada",
+        "proposed": "DocumentoImpressao",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 14,
+        "expected": "TIPO_SISTEMA",
+        "occurrence": 1,
+        "actual": "TipoSistema",
+        "status": "equivalente_renomeada",
+        "proposed": "TipoSistema",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 15,
+        "expected": "CLASSE_CONSUMO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "ClasseConsumo",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 16,
+        "expected": "REGIONAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Regional",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 17,
+        "expected": "DISTRITAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Distrital",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 18,
+        "expected": "SECCIONAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Seccional",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 19,
+        "expected": "MUNICIPIO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Municipio",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 20,
+        "expected": "LOCALIDADE",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Localidade",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 21,
+        "expected": "ENDERECO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Endereco",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 22,
+        "expected": "BAIRRO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Bairro",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 23,
+        "expected": "NUMERO",
+        "occurrence": 2,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "NumeroEndereco",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 24,
+        "expected": "COMPLEMENTO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Complemento",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 25,
+        "expected": "COMPLEMENTO2",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Complemento2",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 26,
+        "expected": "COMPETENCIA",
+        "occurrence": 1,
+        "actual": "DataCompetencia",
+        "status": "equivalente_transformada",
+        "proposed": "DataCompetencia",
+        "note": "Código AAAAMM convertido em primeiro dia do mês (DataCompetencia); não é coluna faltante."
+      },
+      {
+        "position": 27,
+        "expected": "SITUACAO_DOCUMENTO",
+        "occurrence": 1,
+        "actual": "SituacaoDocumento",
+        "status": "equivalente_renomeada",
+        "proposed": "SituacaoDocumento",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 28,
+        "expected": "CLASSE_PRINCIPAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "ClassePrincipal",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 29,
+        "expected": "CDC",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CDC",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 30,
+        "expected": "BC_ICMS",
+        "occurrence": 1,
+        "actual": "BaseICMS",
+        "status": "equivalente_renomeada",
+        "proposed": "BaseICMS",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 31,
+        "expected": "ICMS_TOTAL",
+        "occurrence": 1,
+        "actual": "ICMS",
+        "status": "equivalente_renomeada",
+        "proposed": "ICMS",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 32,
+        "expected": "VALOR_TOTAL",
+        "occurrence": 1,
+        "actual": "ValorFatura",
+        "status": "equivalente_renomeada",
+        "proposed": "ValorFatura",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 33,
+        "expected": "CONSUMO_FATURADO",
+        "occurrence": 1,
+        "actual": "ConsumoOrigem",
+        "status": "equivalente_renomeada",
+        "proposed": "ConsumoOrigem",
+        "note": "Alias atual correspondente ao campo esperado."
+      }
+    ],
+    "counts": {
+      "equivalencia_condicional": 1,
+      "ausente": 23,
+      "equivalente_renomeada": 8,
+      "equivalente_transformada": 1
+    },
+    "caveats": [
+      "Comparação do print com os SQL locais, não inspeção direta do PBIX.",
+      "SQL_TEMPLATE do novo anexo de automação coincide com o original (diferenças de espaços).",
+      "Sem execução no Snowflake; existência física, tipos e unicidade precisam de validação na fonte.",
+      "33 posições no Excel, com NUMERO repetido: primeira é SUBSTR(FATURA,8); segunda é número do endereço.",
+      "EmpresaChave é o parâmetro da execução; EmpresaOrigem preserva FOTO_CADASTRO.EMPRESA para reconciliação.",
+      "Projeção ampliada mantém consulta interna; confirmar FOTO_CADASTRO único por instalação/mês de referência, operandos sem vigências sobrepostas e parceiro de negócio único.",
+      "BC_ICMS mantém agregação original por documento de impressão/cálculo, sem filtro mensal. Revisar chave temporal antes de alterar essa regra.",
+      "Variante RS é igual à fonte geral."
+    ]
+  },
+  {
+    "report": "Encargo covid",
+    "table": "FatoEncargoCovid",
+    "script": [
+      "11_encargo_covid_por_documento.sql"
+    ],
+    "source_script": "originais/encargo_covid.sql",
+    "status": "candidato_pendente_homologacao",
+    "load_mode": "intervalo_inclusivo",
+    "modo_carga": {
+      "tipo": "intervalo_inclusivo",
+      "parametros": [
+        "MES_INICIO",
+        "MES_FIM"
+      ],
+      "filtro": "ITENS_FATURAMENTO.MES_COMPETENCIA",
+      "chamadas_por_empresa_tres_meses": 1
+    },
+    "columns": [
+      {
+        "position": 1,
+        "expected": "ESTADO",
+        "occurrence": 1,
+        "actual": "EmpresaChave",
+        "status": "equivalente_renomeada",
+        "proposed": "EmpresaChave",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 2,
+        "expected": "MES_COMPETENCIA",
+        "occurrence": 1,
+        "actual": "DataCompetencia",
+        "status": "equivalente_transformada",
+        "proposed": "DataCompetencia",
+        "note": "Código AAAAMM convertido em primeiro dia do mês (DataCompetencia); não é coluna faltante."
+      },
+      {
+        "position": 3,
+        "expected": "MES_REFERENCIA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "MesReferencia",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 4,
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "occurrence": 1,
+        "actual": "DocumentoImpressao",
+        "status": "equivalente_renomeada",
+        "proposed": "DocumentoImpressao",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 5,
+        "expected": "ESTORNADO",
+        "occurrence": 1,
+        "actual": "EstornadoOrigem",
+        "status": "equivalente_renomeada",
+        "proposed": "EstornadoOrigem",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 6,
+        "expected": "INSTALACAO",
+        "occurrence": 1,
+        "actual": "Instalacao",
+        "status": "equivalente_renomeada",
+        "proposed": "Instalacao",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 7,
+        "expected": "MWH",
+        "occurrence": 1,
+        "actual": "ConsumoFaturaOrigem",
+        "status": "divergencia_unidade",
+        "proposed": "MWh",
+        "note": "ConsumoFaturaOrigem contém consumo bruto; não equivale a MWH. Aplicar /1000 em nova coluna MWh, preservando alias atual."
+      },
+      {
+        "position": 8,
+        "expected": "RECEITA",
+        "occurrence": 1,
+        "actual": "ValorEncargoAssinado",
+        "status": "equivalente_renomeada",
+        "proposed": "ValorEncargoAssinado",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 9,
+        "expected": "DATA_DADOS",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "DataDados",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      }
+    ],
+    "counts": {
+      "equivalente_renomeada": 5,
+      "equivalente_transformada": 1,
+      "ausente": 2,
+      "divergencia_unidade": 1
+    },
+    "caveats": [
+      "Comparação do print com os SQL locais, não inspeção direta do PBIX.",
+      "SQL_TEMPLATE do novo anexo de automação coincide com o original (diferenças de espaços).",
+      "Sem execução no Snowflake; existência física, tipos e unicidade precisam de validação na fonte.",
+      "MWh é consumo faturado / 1000. Manter ConsumoFaturaOrigem para compatibilidade; usar MWh no visual solicitado.",
+      "DATA_DADOS do COVID é instante de execução formatado; DATA_DADOS de Escassez vem de FATURAMENTO.DATA_DADOS.",
+      "Preagregação por mês + impressão + cálculo; não replicar consumo de fatura por item.",
+      "Original usa seis meses relativos ao relógio e linha artificial com zeros; candidato usa intervalo ancorado no parâmetro, sem linha artificial.",
+      "Validar unicidade de FATURAMENTO nas três colunas de junção; variante RS igual à geral."
+    ]
+  },
+  {
+    "report": "Escassez hidrica",
+    "table": "FatoEncargoEscassez",
+    "script": [
+      "11_encargo_escassez_hidrica_por_documento.sql"
+    ],
+    "source_script": "originais/encargo_escassez_hidrica.sql",
+    "status": "candidato_pendente_homologacao",
+    "load_mode": "intervalo_inclusivo",
+    "modo_carga": {
+      "tipo": "intervalo_inclusivo",
+      "parametros": [
+        "MES_INICIO",
+        "MES_FIM"
+      ],
+      "filtro": "ITENS_FATURAMENTO.MES_COMPETENCIA",
+      "chamadas_por_empresa_tres_meses": 1
+    },
+    "columns": [
+      {
+        "position": 1,
+        "expected": "ESTADO",
+        "occurrence": 1,
+        "actual": "EmpresaChave",
+        "status": "equivalente_renomeada",
+        "proposed": "EmpresaChave",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 2,
+        "expected": "MES_COMPETENCIA",
+        "occurrence": 1,
+        "actual": "DataCompetencia",
+        "status": "equivalente_transformada",
+        "proposed": "DataCompetencia",
+        "note": "Código AAAAMM convertido em primeiro dia do mês (DataCompetencia); não é coluna faltante."
+      },
+      {
+        "position": 3,
+        "expected": "MES_REFERENCIA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "MesReferencia",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 4,
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "occurrence": 1,
+        "actual": "DocumentoImpressao",
+        "status": "equivalente_renomeada",
+        "proposed": "DocumentoImpressao",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 5,
+        "expected": "ESTORNADO",
+        "occurrence": 1,
+        "actual": "EstornadoOrigem",
+        "status": "equivalente_renomeada",
+        "proposed": "EstornadoOrigem",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 6,
+        "expected": "INSTALACAO",
+        "occurrence": 1,
+        "actual": "Instalacao",
+        "status": "equivalente_renomeada",
+        "proposed": "Instalacao",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 7,
+        "expected": "MWH",
+        "occurrence": 1,
+        "actual": "ConsumoFaturaOrigem",
+        "status": "divergencia_unidade",
+        "proposed": "MWh",
+        "note": "ConsumoFaturaOrigem contém consumo bruto; não equivale a MWH. Aplicar /1000 em nova coluna MWh, preservando alias atual."
+      },
+      {
+        "position": 8,
+        "expected": "RECEITA",
+        "occurrence": 1,
+        "actual": "ValorEncargoAssinado",
+        "status": "equivalente_renomeada",
+        "proposed": "ValorEncargoAssinado",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 9,
+        "expected": "DATA_DADOS",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "DataDados",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      }
+    ],
+    "counts": {
+      "equivalente_renomeada": 5,
+      "equivalente_transformada": 1,
+      "ausente": 2,
+      "divergencia_unidade": 1
+    },
+    "caveats": [
+      "Comparação do print com os SQL locais, não inspeção direta do PBIX.",
+      "SQL_TEMPLATE do novo anexo de automação coincide com o original (diferenças de espaços).",
+      "Sem execução no Snowflake; existência física, tipos e unicidade precisam de validação na fonte.",
+      "MWh é consumo faturado / 1000. Manter ConsumoFaturaOrigem para compatibilidade; usar MWh no visual solicitado.",
+      "DATA_DADOS do COVID é instante de execução formatado; DATA_DADOS de Escassez vem de FATURAMENTO.DATA_DADOS.",
+      "Preagregação por mês + impressão + cálculo; não replicar consumo de fatura por item.",
+      "Original usa seis meses relativos ao relógio e linha artificial com zeros; candidato usa intervalo ancorado no parâmetro, sem linha artificial.",
+      "Validar unicidade de FATURAMENTO nas três colunas de junção; variante RS igual à geral."
+    ]
+  },
+  {
+    "report": "isencao icms tusd",
+    "table": [
+      "FatoIsencaoReducao",
+      "FatoIsencaoCabecalho (nova)"
+    ],
+    "script": [
+      "13_isencao_reducao_por_documento.sql",
+      "13b_isencao_cabecalho.sql"
+    ],
+    "source_script": "originais/isencao_icms_tusd.sql",
+    "status": "candidato_pendente_homologacao",
+    "load_mode": "intervalo_inclusivo",
+    "modo_carga": {
+      "tipo": "intervalo_inclusivo",
+      "parametros": [
+        "MES_INICIO",
+        "MES_FIM"
+      ],
+      "filtro": "MES_COMPETENCIA",
+      "chamadas_por_empresa_tres_meses": 1
+    },
+    "columns": [
+      {
+        "position": 1,
+        "expected": "EMPRESA",
+        "occurrence": 1,
+        "actual": "EmpresaChave",
+        "status": "equivalente_renomeada",
+        "proposed": "EmpresaChave",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 2,
+        "expected": "MES_COMPETENCIA",
+        "occurrence": 1,
+        "actual": "DataCompetencia",
+        "status": "equivalente_transformada",
+        "proposed": "DataCompetencia",
+        "note": "Código AAAAMM convertido em primeiro dia do mês (DataCompetencia); não é coluna faltante."
+      },
+      {
+        "position": 3,
+        "expected": "MES_REFERENCIA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "MesReferencia",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 4,
+        "expected": "MUNICIPIO",
+        "occurrence": 1,
+        "actual": "MunicipioOrigem",
+        "status": "equivalencia_condicional",
+        "proposed": "Municipio",
+        "note": "Modelo extrai SUBSTR(DOMICILIO_FISCAL,4,7); legado usa COD_MUNICIPIO do lookup. Equivalem somente quando a chave encontra correspondência. Candidato preserva ambos."
+      },
+      {
+        "position": 5,
+        "expected": "INSTALACAO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Instalacao",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 6,
+        "expected": "CONTA_CONTRATO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "ContaContrato",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 7,
+        "expected": "NOME",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Nome",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 8,
+        "expected": "CPF",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CPF",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 9,
+        "expected": "CNPJ",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CNPJ",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 10,
+        "expected": "GRUPO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Grupo",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 11,
+        "expected": "TARIFA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Tarifa",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 12,
+        "expected": "CLASSE",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Classe",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 13,
+        "expected": "REDUCAO",
+        "occurrence": 1,
+        "actual": "ReducaoAssinada",
+        "status": "equivalente_renomeada",
+        "proposed": "ReducaoAssinada",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 14,
+        "expected": "ICMS",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "FatoIsencaoCabecalho.ICMS",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 15,
+        "expected": "VALOR_FATURA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "FatoIsencaoCabecalho.ValorFatura",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      }
+    ],
+    "counts": {
+      "equivalente_renomeada": 2,
+      "equivalente_transformada": 1,
+      "ausente": 11,
+      "equivalencia_condicional": 1
+    },
+    "caveats": [
+      "Comparação do print com os SQL locais, não inspeção direta do PBIX.",
+      "SQL_TEMPLATE do novo anexo de automação coincide com o original (diferenças de espaços).",
+      "Sem execução no Snowflake; existência física, tipos e unicidade precisam de validação na fonte.",
+      "Modelo atual tem redução por documento/cálculo/município; legado agrupa por atributos cadastrais e valor de fatura.",
+      "SQL legado soma ICMS após juntar itens ao cabeçalho, podendo multiplicar imposto. Candidato não reproduz esse SUM inseguro.",
+      "ICMS e ValorFatura são valores de cabeçalho. Consulta separada usa EXISTS para evitar repetição por município/item; não juntar essa fato diretamente às demais e somar valores repetidos.",
+      "Modelagem da ligação por documento exige chave composta EmpresaChave + DataCompetencia + DocumentoImpressao + DocumentoCalculo. Testar unicidade, nulos e cobertura antes de criar dimensão/relacionamento.",
+      "Adotar join completo mês/impressão/cálculo e validar cobertura versus join original só por impressão; diferenças precisam ser explicadas.",
+      "Cadastro deve ser único por instalação/conta; SIGLA_MUNICIPIOS por COD_MUNICIPIO. Nenhum MAX arbitrário foi usado para mascarar duplicatas.",
+      "Variante RS coincide com geral; original intervalo relógio -3..-1 substituído por MES_INICIO/MES_FIM."
+    ]
+  },
+  {
+    "report": "icms injetada",
+    "table": "FatoInjetada",
+    "script": [
+      "14_injetada_itens_preagregados.sql"
+    ],
+    "source_script": "originais/icms_injetada.sql",
+    "status": "candidato_pendente_homologacao",
+    "load_mode": "mensal",
+    "modo_carga": {
+      "tipo": "mensal",
+      "parametro": "MES",
+      "filtro": "ITENS_FATURAMENTO.MES_COMPETENCIA",
+      "chamadas_por_empresa_tres_meses": 3
+    },
+    "columns": [
+      {
+        "position": 1,
+        "expected": "EMPRESA",
+        "occurrence": 1,
+        "actual": "EmpresaChave",
+        "status": "equivalente_renomeada",
+        "proposed": "EmpresaChave",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 2,
+        "expected": "MES_COMPETENCIA",
+        "occurrence": 1,
+        "actual": "DataCompetencia",
+        "status": "equivalente_transformada",
+        "proposed": "DataCompetencia",
+        "note": "Código AAAAMM convertido em primeiro dia do mês (DataCompetencia); não é coluna faltante."
+      },
+      {
+        "position": 3,
+        "expected": "MES_REFERENCIA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "MesReferencia",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 4,
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "occurrence": 1,
+        "actual": "DocumentoImpressao",
+        "status": "equivalente_renomeada",
+        "proposed": "DocumentoImpressao",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 5,
+        "expected": "DATA_EMISSAO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "sem_fonte",
+        "proposed": "DataEmissao",
+        "note": "Campo ausente no modelo e NULL literal no SQL de automação; cabeçalho no Excel não prova disponibilidade de valores. Necessária fonte complementar."
+      },
+      {
+        "position": 6,
+        "expected": "NUMERO_NF3E",
+        "occurrence": 1,
+        "actual": null,
+        "status": "sem_fonte",
+        "proposed": "NumeroNF3e",
+        "note": "Campo ausente no modelo e NULL literal no SQL de automação; cabeçalho no Excel não prova disponibilidade de valores. Necessária fonte complementar."
+      },
+      {
+        "position": 7,
+        "expected": "CHAVE_ACESSO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "sem_fonte",
+        "proposed": "ChaveAcesso",
+        "note": "Campo ausente no modelo e NULL literal no SQL de automação; cabeçalho no Excel não prova disponibilidade de valores. Necessária fonte complementar."
+      },
+      {
+        "position": 8,
+        "expected": "NOME",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Nome",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 9,
+        "expected": "ENDERECO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Endereco",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 10,
+        "expected": "CPF_CNPJ",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CpfCnpj",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 11,
+        "expected": "INSCRICAO_ESTADUAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "InscricaoEstadual",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 12,
+        "expected": "INSTALACAO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Instalacao",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 13,
+        "expected": "CONSUMO",
+        "occurrence": 1,
+        "actual": "ConsumoOrigem",
+        "status": "equivalente_renomeada",
+        "proposed": "ConsumoOrigem",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 14,
+        "expected": "RECEITA",
+        "occurrence": 1,
+        "actual": "ValorItensAssinado",
+        "status": "equivalente_renomeada",
+        "proposed": "ValorItensAssinado",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 15,
+        "expected": "TOTAL_INJET",
+        "occurrence": 1,
+        "actual": "TotalInjetadoOrigem",
+        "status": "equivalente_renomeada",
+        "proposed": "TotalInjetadoOrigem",
+        "note": "Alias atual correspondente ao campo esperado."
+      }
+    ],
+    "counts": {
+      "equivalente_renomeada": 5,
+      "equivalente_transformada": 1,
+      "ausente": 6,
+      "sem_fonte": 3
+    },
+    "caveats": [
+      "Comparação do print com os SQL locais, não inspeção direta do PBIX.",
+      "SQL_TEMPLATE do novo anexo de automação coincide com o original (diferenças de espaços).",
+      "Sem execução no Snowflake; existência física, tipos e unicidade precisam de validação na fonte.",
+      "DataEmissao, NumeroNF3e e ChaveAcesso têm NULL literal no original; candidato só preserva estrutura, não obtém dados inexistentes nessa fonte.",
+      "Mantém preagregação separada ZPGAT por mês/impressão/cálculo; não reintroduz junção entre itens brutos.",
+      "TOTAL_INJET é consumo dos itens ZPGAT; RECEITA é receita dos itens listados. Nenhum deles é automaticamente montante de ICMS.",
+      "Validar FATURAMENTO por mês/impressão/cálculo, parceiro por PARCEIRO_NEGOCIO e cadastro por INSTALACAO antes dos joins adicionais. Se não forem únicos, candidato não deve substituir modelo até definir chave/vigência correta.",
+      "Chave DocumentoImpressao isolada não é única. Manter tabela no lado muitos com dimensões; não remover duplicatas financeiras para satisfazer relacionamento.",
+      "Variante RS igual à fonte geral."
+    ]
+  },
+  {
+    "report": "imposto retido (retencao tributos)",
+    "table": "Não aparece no print",
+    "script": [],
+    "source_script": "originais/retencao_tributos.sql",
+    "status": "bloqueado_contrato_ambiguo",
+    "load_mode": "mensal",
+    "modo_carga": {
+      "tipo": "mensal",
+      "parametro": "MES_COMPET",
+      "filtro": "BASE_IMPOSTO_RETIDO.MES_COMPETENCIA",
+      "chamadas_por_empresa_tres_meses": 3
+    },
+    "columns": [
+      {
+        "position": 1,
+        "expected": "EMPRESA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 2,
+        "expected": "MES_COMPETENCIA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 3,
+        "expected": "MES_REFERENCIA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 4,
+        "expected": "DOCUMENTO_IMPRESSAO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 5,
+        "expected": "DATA_EMISSAO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 6,
+        "expected": "NUMERO_NF3E",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 7,
+        "expected": "CHAVE_ACESSO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 8,
+        "expected": "NOME",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 9,
+        "expected": "ENDERECO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 10,
+        "expected": "CPF_CNPJ",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 11,
+        "expected": "INSCRICAO_ESTADUAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 12,
+        "expected": "INSTALACAO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 13,
+        "expected": "CONSUMO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 14,
+        "expected": "RECEITA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      },
+      {
+        "position": 15,
+        "expected": "TOTAL_INJET",
+        "occurrence": 1,
+        "actual": null,
+        "status": "requisito_contraditorio",
+        "proposed": null,
+        "note": "Coluna copiada da especificação de Injetada; não foi possível atribuir a retenções com evidência."
+      }
+    ],
+    "counts": {
+      "requisito_contraditorio": 15
+    },
+    "caveats": [
+      "Comparação do print com os SQL locais, não inspeção direta do PBIX.",
+      "SQL_TEMPLATE do novo anexo de automação coincide com o original (diferenças de espaços).",
+      "Sem execução no Snowflake; existência física, tipos e unicidade precisam de validação na fonte.",
+      "A lista de 15 colunas do requisito é exatamente igual à de ICMS Injetada; contradiz o Excel real anterior e a fonte de retenções.",
+      "SQL geral e variante AP consultam SB_FATURAMENTO.{SCHEMA}.BASE_IMPOSTO_RETIDO, com SELECT *; nomes físicos devem ser confirmados antes de projetar 13 aliases.",
+      "Nenhum script de retenção foi inventado. Aguardar confirmação do contrato correto pelo usuário."
+    ],
+    "prior_excel_headers": [
+      {
+        "arquivo": "retencao_tributos_202610.xlsx",
+        "aba": "EQTL_PI",
+        "columns": [
+          "EMPRESA",
+          "MES_COMPETENCIA",
+          "CNPJ",
+          "NOME_DO_FORNECEDOR",
+          "VALOR_DA_NOTA_FISCAL",
+          "NÚMERO_DA_NOTA_FISCAL",
+          "DATA_DA_NOTA_FISCAL",
+          "DATA_DO_LANCAMENTO_NO_SAP",
+          "VALORES_RETIDOS_PIS",
+          "VALORES_RETIDOS_COFINS",
+          "VALORES_RETIDOS_IR",
+          "VALORES_RETIDOS_CSLL",
+          "DATA_DADOS"
+        ]
+      },
+      {
+        "arquivo": "retencao_tributos_202610.xlsx",
+        "aba": "EQTL_AL",
+        "columns": [
+          "EMPRESA",
+          "MES_COMPETENCIA",
+          "CNPJ",
+          "NOME_DO_FORNECEDOR",
+          "VALOR_DA_NOTA_FISCAL",
+          "NÚMERO_DA_NOTA_FISCAL",
+          "DATA_DA_NOTA_FISCAL",
+          "DATA_DO_LANCAMENTO_NO_SAP",
+          "VALORES_RETIDOS_PIS",
+          "VALORES_RETIDOS_COFINS",
+          "VALORES_RETIDOS_IR",
+          "VALORES_RETIDOS_CSLL",
+          "DATA_DADOS"
+        ]
+      },
+      {
+        "arquivo": "retencao_tributos_202610.xlsx",
+        "aba": "EQTL_MA",
+        "columns": [
+          "EMPRESA",
+          "MES_COMPETENCIA",
+          "CNPJ",
+          "NOME_DO_FORNECEDOR",
+          "VALOR_DA_NOTA_FISCAL",
+          "NÚMERO_DA_NOTA_FISCAL",
+          "DATA_DA_NOTA_FISCAL",
+          "DATA_DO_LANCAMENTO_NO_SAP",
+          "VALORES_RETIDOS_PIS",
+          "VALORES_RETIDOS_COFINS",
+          "VALORES_RETIDOS_IR",
+          "VALORES_RETIDOS_CSLL",
+          "DATA_DADOS"
+        ]
+      },
+      {
+        "arquivo": "retencao_tributos_202610.xlsx",
+        "aba": "EQTL_PA",
+        "columns": [
+          "EMPRESA",
+          "MES_COMPETENCIA",
+          "CNPJ",
+          "NOME_DO_FORNECEDOR",
+          "VALOR_DA_NOTA_FISCAL",
+          "NÚMERO_DA_NOTA_FISCAL",
+          "DATA_DA_NOTA_FISCAL",
+          "DATA_DO_LANCAMENTO_NO_SAP",
+          "VALORES_RETIDOS_PIS",
+          "VALORES_RETIDOS_COFINS",
+          "VALORES_RETIDOS_IR",
+          "VALORES_RETIDOS_CSLL",
+          "DATA_DADOS"
+        ]
+      },
+      {
+        "arquivo": "retencao_tributos_202610.xlsx",
+        "aba": "EQTL_AP",
+        "columns": [
+          "EMPRESA",
+          "MES_COMPETENCIA",
+          "CNPJ",
+          "NOME_DO_FORNECEDOR",
+          "VALOR_DA_NOTA_FISCAL",
+          "NÚMERO_DA_NOTA_FISCAL",
+          "DATA_DA_NOTA_FISCAL",
+          "DATA_DO_LANCAMENTO_NO_SAP",
+          "VALORES_RETIDOS_PIS",
+          "VALORES_RETIDOS_COFINS",
+          "VALORES_RETIDOS_IR",
+          "VALORES_RETIDOS_CSLL",
+          "DATA_DADOS"
+        ]
+      },
+      {
+        "arquivo": "retencao_tributos_202610.xlsx",
+        "aba": "EQTL_RS",
+        "columns": [
+          "EMPRESA",
+          "MES_COMPETENCIA",
+          "CNPJ",
+          "NOME_DO_FORNECEDOR",
+          "VALOR_DA_NOTA_FISCAL",
+          "NÚMERO_DA_NOTA_FISCAL",
+          "DATA_DA_NOTA_FISCAL",
+          "DATA_DO_LANCAMENTO_NO_SAP",
+          "VALORES_RETIDOS_PIS",
+          "VALORES_RETIDOS_COFINS",
+          "VALORES_RETIDOS_IR",
+          "VALORES_RETIDOS_CSLL",
+          "DATA_DADOS"
+        ]
+      }
+    ]
+  },
+  {
+    "report": "financiamento padrão",
+    "table": [
+      "FatoFinanciamentoNota",
+      "FatoFinanciamentoCompensacao"
+    ],
+    "script": [
+      "09_financiamento_notas.sql",
+      "10_financiamento_compensacao.sql"
+    ],
+    "source_script": "originais/financiamento_padrao.sql",
+    "status": "candidato_pendente_homologacao",
+    "load_mode": "mensal",
+    "modo_carga": {
+      "tipo": "mensal",
+      "parametro": "MES",
+      "filtro": "TO_CHAR(finpad_notas.DATA_ENTRADA,yyyymm)",
+      "chamadas_por_empresa_tres_meses": 3
+    },
+    "columns": [
+      {
+        "position": 1,
+        "expected": "EMPRESA",
+        "occurrence": 1,
+        "actual": "EmpresaChave",
+        "status": "equivalente_renomeada",
+        "proposed": "EmpresaChave",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 2,
+        "expected": "NOTA",
+        "occurrence": 1,
+        "actual": "Nota",
+        "status": "equivalente_renomeada",
+        "proposed": "Nota",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 3,
+        "expected": "MANDANTE",
+        "occurrence": 1,
+        "actual": "Mandante",
+        "status": "equivalente_renomeada",
+        "proposed": "Mandante",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 4,
+        "expected": "INSTALACAO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Instalacao",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 5,
+        "expected": "CONTA_CONTRATO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "ContaContrato",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 6,
+        "expected": "PARCEIRO_NEGOCIO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "ParceiroNegocio",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 7,
+        "expected": "PEP_ODS",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "PepOds",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 8,
+        "expected": "TIPO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Tipo",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 9,
+        "expected": "DATA_CADASTRO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "DataCadastroOrigem",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 10,
+        "expected": "NUMERO_DOCUMENTO",
+        "occurrence": 1,
+        "actual": "NumeroDocumento",
+        "status": "equivalente_renomeada",
+        "proposed": "NumeroDocumento",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 11,
+        "expected": "CANCELAMENTO",
+        "occurrence": 1,
+        "actual": "CancelamentoOrigem",
+        "status": "equivalente_renomeada",
+        "proposed": "CancelamentoOrigem",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 12,
+        "expected": "DATA_CANC",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "DataCancelamentoOrigem",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 13,
+        "expected": "ORGANIZACAO_VENDAS",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "OrganizacaoVendas",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 14,
+        "expected": "NOME",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Nome",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 15,
+        "expected": "SOBRENOME",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Sobrenome",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 16,
+        "expected": "NR_ID_FISCAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "NumeroIdFiscal",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 17,
+        "expected": "MONTANTE",
+        "occurrence": 1,
+        "actual": "Montante",
+        "status": "equivalente_renomeada",
+        "proposed": "Montante",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 18,
+        "expected": "TIPO_DOC_VENDAS",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "TipoDocumentoVendas",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 19,
+        "expected": "QTD_ORDEM",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "QuantidadeOrdem",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 20,
+        "expected": "STATUS_INTERFACE",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "StatusInterface",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 21,
+        "expected": "ALTERADO_POR",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "AlteradoPor",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 22,
+        "expected": "MATERIAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Material",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 23,
+        "expected": "RUA",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Rua",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 24,
+        "expected": "ENDERECO_EMAIL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "EnderecoEmail",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 25,
+        "expected": "CODIGO_POSTAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CodigoPostal",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 26,
+        "expected": "NUMERO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "NumeroEndereco",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 27,
+        "expected": "CIDADE",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Cidade",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 28,
+        "expected": "PAIS",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Pais",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 29,
+        "expected": "MOEDA",
+        "occurrence": 1,
+        "actual": "Moeda",
+        "status": "equivalente_renomeada",
+        "proposed": "Moeda",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 30,
+        "expected": "CRIADO_POR",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CriadoPor",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 31,
+        "expected": "NUMERO_NFSE",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "NumeroNFSe",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 32,
+        "expected": "DATA_ENTRADA",
+        "occurrence": 1,
+        "actual": "DataEntrada",
+        "status": "equivalente_renomeada",
+        "proposed": "DataEntrada",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 33,
+        "expected": "CENTRO_LUCRO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CentroLucro",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 34,
+        "expected": "REGIAO",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "Regiao",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 35,
+        "expected": "COD_DOMI_FISCAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "CodigoDomicilioFiscal",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 36,
+        "expected": "DOCUMENTO_VENDAS",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "DocumentoVendas",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 37,
+        "expected": "NR_NOTA_FISCAL",
+        "occurrence": 1,
+        "actual": null,
+        "status": "ausente",
+        "proposed": "NumeroNotaFiscal",
+        "note": "Campo disponível no SQL de origem, omitido na projeção atual."
+      },
+      {
+        "position": 38,
+        "expected": "STATUS_FINANCIAMENTO_FAT",
+        "occurrence": 1,
+        "actual": "StatusFinanciamento",
+        "status": "equivalente_renomeada",
+        "proposed": "FatoFinanciamentoCompensacao.StatusFinanciamento",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 39,
+        "expected": "QTD_PARCELAS",
+        "occurrence": 1,
+        "actual": "ParcelasTextoItemNaoNulo",
+        "status": "equivalente_renomeada",
+        "proposed": "FatoFinanciamentoCompensacao.ParcelasTextoItemNaoNulo",
+        "note": "Alias atual correspondente ao campo esperado."
+      },
+      {
+        "position": 40,
+        "expected": "MONTANTE_COMPENSACAO",
+        "occurrence": 1,
+        "actual": "MontanteCompensacao",
+        "status": "equivalente_renomeada",
+        "proposed": "FatoFinanciamentoCompensacao.MontanteCompensacao",
+        "note": "Alias atual correspondente ao campo esperado."
+      }
+    ],
+    "counts": {
+      "equivalente_renomeada": 11,
+      "ausente": 29
+    },
+    "caveats": [
+      "Comparação do print com os SQL locais, não inspeção direta do PBIX.",
+      "SQL_TEMPLATE do novo anexo de automação coincide com o original (diferenças de espaços).",
+      "Sem execução no Snowflake; existência física, tipos e unicidade precisam de validação na fonte.",
+      "37 atributos documentais ficam na Nota; status, contagem e montante compensado ficam na Compensacao. Juntas cobrem os 40 campos requeridos.",
+      "Não colocar MONTANTE na fato por status: nota com dois status pode repetir o valor da nota.",
+      "QTD_PARCELAS preserva COUNT(sub.texto_item), e não quantidade comprovada de parcelas distintas. Alias explicita a regra.",
+      "SELECT DISTINCT da Nota remove apenas tuplas documentais idênticas. Expandir atributos pode revelar múltiplas versões; validar Empresa/Mandante/Nota/NumeroDocumento, sem MAX arbitrário.",
+      "Join original DOC x SUB somente por NumeroDocumento ainda pode multiplicar compensação; consulta 10 é cópia compatível, não correção comprovada desse risco.",
+      "Competência é mês de DATA_ENTRADA da nota, não mês de liquidação/compensação; três meses são três coortes de entrada.",
+      "Variante RS igual à fonte geral."
+    ]
+  }
+]
