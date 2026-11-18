@@ -2,10 +2,14 @@
 
 Arquivos do sistema Relatórios Corporativos e do projeto de integração com Power BI.
 
+A [página inicial para Netlify](site/index.html) reúne o catálogo, os links do
+portal corporativo e os downloads do projeto. Veja as [instruções de publicação](docs/publicacao-netlify.md).
+
 O módulo complementar de preparação dos Excel mensais está descrito em [LEIA_PRIMEIRO_BASE_COMUM.md](LEIA_PRIMEIRO_BASE_COMUM.md). Ele produz base privada em Parquet, cobertura e agregações para os dois domínios, sem repetir consultas Snowflake na navegação dos painéis.
 
 ## Downloads
 
+- [Baixar a página para o Netlify — ZIP](https://github.com/seumaralicoresdev/bi-dos-relatorios/raw/refs/heads/main/downloads/Pagina_Relatorios_Netlify.zip)
 - [Baixar o aplicativo Relatórios Corporativos — código-fonte ZIP](https://github.com/seumaralicoresdev/bi-dos-relatorios/raw/refs/heads/main/downloads/Relatorios_Corporativos.zip)
 - [Baixar o projeto Power BI — SQL, DAX e documentação ZIP](https://github.com/seumaralicoresdev/bi-dos-relatorios/raw/refs/heads/main/downloads/Projeto_PowerBI.zip)
 
